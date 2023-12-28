@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_qfnu_test
+    username: root
+    password: "0000"
+  jpa:
+    hibernate:
+      ddl-auto: update #在生产环境常用none
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    database: mysql
