@@ -2,6 +2,7 @@ package cn.edu.qfnu.demo.controller;
 
 import cn.edu.qfnu.demo.entity.User;
 import cn.edu.qfnu.demo.repository.UserRepository;
+import cn.edu.qfnu.demo.service.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
@@ -15,36 +16,32 @@ import java.util.stream.Stream;
 @RequestMapping("user")
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
-    public UserController(UserRepository userRepository){
-        this.userRepository = userRepository;
+    public UserController(UserService userService){
+        this.userService = userService;
     }
 
     @GetMapping("findById/{id}")
     public User findById(@PathVariable Integer id) {
-        Optional<User> userOptional = userRepository.findById(id);
 
-        return userOptional.orElse(null);
+        return userService.findById(id);
     }
 
     @PostMapping("save")
     public String save(@RequestBody User user){
-        userRepository.save(user);
+        userService.saveOrUpdate(user);
         return "success";
     }
 
     @PostMapping("removeById/{id}")
     public  String removeById(@PathVariable Integer id){
-        userRepository.deleteById(id);
+        userService.removeById(id);
         return "success";
     }
 
     @PostMapping("findList/{pageNum}/{pageSize}")
     public List<User> findList(@PathVariable Integer pageNum, @PathVariable Integer pageSize){
-        PageRequest pageRequest = PageRequest.of(pageNum, pageSize);
-        Page<User> userPage = userRepository.findAll(pageRequest);
-
-        return userPage.stream().toList();
+        return userService.findPage(pageNum - 1, pageSize);
     }
 }
