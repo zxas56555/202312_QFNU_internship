@@ -3,7 +3,6 @@ package cn.edu.qfnu.demo.service.impl;
 import cn.edu.qfnu.demo.entity.User;
 import cn.edu.qfnu.demo.repository.UserRepository;
 import cn.edu.qfnu.demo.service.UserService;
-import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;

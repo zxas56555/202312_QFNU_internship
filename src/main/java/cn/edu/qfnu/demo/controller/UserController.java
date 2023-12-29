@@ -1,16 +1,10 @@
 package cn.edu.qfnu.demo.controller;
 
 import cn.edu.qfnu.demo.entity.User;
-import cn.edu.qfnu.demo.repository.UserRepository;
 import cn.edu.qfnu.demo.service.UserService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("user")
