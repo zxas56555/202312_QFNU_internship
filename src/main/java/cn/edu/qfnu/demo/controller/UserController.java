@@ -1,6 +1,7 @@
 package cn.edu.qfnu.demo.controller;
 
 import cn.edu.qfnu.demo.entity.User;
+import cn.edu.qfnu.demo.model.RequestPageResult;
 import cn.edu.qfnu.demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,7 @@ public class UserController {
     }
 
     @PostMapping("findList/{pageNum}/{pageSize}")
-    public List<User> findList(@PathVariable Integer pageNum, @PathVariable Integer pageSize){
+    public RequestPageResult<User> findList(@PathVariable Integer pageNum, @PathVariable Integer pageSize){
         return userService.findPage(pageNum - 1, pageSize);
     }
 }

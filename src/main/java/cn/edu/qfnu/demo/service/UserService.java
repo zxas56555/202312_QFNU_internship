@@ -1,6 +1,7 @@
 package cn.edu.qfnu.demo.service;
 
 import cn.edu.qfnu.demo.entity.User;
+import cn.edu.qfnu.demo.model.RequestPageResult;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public interface UserService {
      * @param pageSize 分页大小
      * @return
      */
-    List<User> findPage(Integer pageNum, Integer pageSize);
+    RequestPageResult<User> findPage(Integer pageNum, Integer pageSize);
 
     /**
      * 保存或更新
