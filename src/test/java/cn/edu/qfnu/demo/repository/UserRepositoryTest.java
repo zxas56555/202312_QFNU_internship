@@ -17,15 +17,18 @@ public class UserRepositoryTest {
     @Test
     public void saveUser()
     {
-        User user = new User();
-        user.setId(1);
-        user.setUsername("admin");
-        user.setName("lgr");
-        user.setPassword("123456");
-        user.setAge(20);
-        user.setPhone("12345678901");
+        for (int i = 3; i < 40; i++) {
 
-        userRepository.save(user);
+            User user = new User();
+            user.setId(i);
+            user.setUsername("admin" + i);
+            user.setName("张三" +i);
+            user.setPassword("123456");
+            user.setAge(20);
+            user.setPhone("12345678901");
+
+            userRepository.save(user);
+        }
     }
 
     @Test
