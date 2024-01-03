@@ -2,9 +2,11 @@ package cn.edu.qfnu.demo.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "tb_user")
-public class User {
+public class User implements Serializable {
     /**
      * 主键
      */

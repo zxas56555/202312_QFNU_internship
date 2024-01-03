@@ -22,6 +22,15 @@ public interface UserService {
     RequestPageResult<User> findPage(Integer pageNum, Integer pageSize);
 
     /**
+     * 分页查询
+     * @param pageNum 页码
+     * @param pageSize 分页大小
+     * @param user 查询参数
+     * @return 查询结果
+     */
+    RequestPageResult<User> findPage(Integer pageNum, Integer pageSize, User user);
+
+    /**
      * 保存或更新
      * @param user
      * @return

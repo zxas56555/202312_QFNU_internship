@@ -36,7 +36,11 @@ public class UserController {
     }
 
     @PostMapping("findList/{pageNum}/{pageSize}")
-    public RequestPageResult<User> findList(@PathVariable Integer pageNum, @PathVariable Integer pageSize){
-        return userService.findPage(pageNum - 1, pageSize);
+    public RequestPageResult<User> findList(@PathVariable Integer pageNum, @PathVariable Integer pageSize, @RequestBody User user){
+        if (null == user){
+            return userService.findPage(pageNum - 1, pageSize);
+        }else {
+            return  userService.findPage(pageNum - 1, pageSize, user);
+        }
     }
 }
