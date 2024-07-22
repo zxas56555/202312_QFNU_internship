@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db_qfnu_test
-    username: root
-    password: "0000"
+    url: jdbc:mysql://47.99.92.117:3306/db_qfnu_test
+    username: db_qfnu_test
+    password: "db_qfnu_test"
   jpa:
     hibernate:
       ddl-auto: update #在生产环境常用none
