@@ -40,8 +40,8 @@ public class TransactionAdviceConfig {
 
         Map<String, TransactionAttribute> txMap = new HashMap<>();
         txMap.put("find*", txAttr_readOnly);
-        txMap.put("save*", txAttr_readOnly);
-        txMap.put("remove*", txAttr_readOnly);
+        txMap.put("save*", txAttr_required);
+        txMap.put("remove*", txAttr_required);
 
         NameMatchTransactionAttributeSource source = new NameMatchTransactionAttributeSource();
 //        source.addTransactionalMethod("find*", txAttr_readOnly);
