@@ -27,7 +27,7 @@ public class TransactionAdviceConfig {
     }
 
     @Bean
-    public TransactionInterceptor txAdvice(){
+    public TransactionInterceptor txAdvice() {
 
         RuleBasedTransactionAttribute txAttr_required = new RuleBasedTransactionAttribute();
         txAttr_required.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
@@ -52,7 +52,7 @@ public class TransactionAdviceConfig {
     }
 
     @Bean
-    public Advisor txAdviceAdvisor(){
+    public Advisor txAdviceAdvisor() {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
         // cn.edu.qfnu.demo.service
         // cn.edu.qfnu.demo.test.service

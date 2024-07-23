@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 @Service
 public class TestServiceImpl implements TestService {
-    public String helloWithTime(){
+    public String helloWithTime() {
         String str = "Hello world!";
         LocalDateTime now = LocalDateTime.now();
 

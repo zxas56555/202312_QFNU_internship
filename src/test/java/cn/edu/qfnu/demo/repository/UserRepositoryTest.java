@@ -15,14 +15,13 @@ public class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    public void saveUser()
-    {
+    public void saveUser() {
         for (int i = 3; i < 40; i++) {
 
             User user = new User();
             user.setId(i);
             user.setUsername("admin" + i);
-            user.setName("张三" +i);
+            user.setName("张三" + i);
             user.setPassword("123456");
             user.setAge(20);
             user.setPhone("12345678901");
@@ -32,14 +31,13 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void findUser()
-    {
-        Optional<User> userOptional =  userRepository.findById(1);
+    public void findUser() {
+        Optional<User> userOptional = userRepository.findById(1);
 
 
-        if(userOptional.isPresent()){
+        if (userOptional.isPresent()) {
             System.out.println(userOptional.get().getName());
-        }else{
+        } else {
             System.err.println("未查询到相关对象！");
         }
     }

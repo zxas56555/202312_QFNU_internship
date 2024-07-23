@@ -57,13 +57,13 @@ public class UserServiceImpl implements UserService {
 //        Page<User> users = userRepository.findAll(example, pageRequest);
 
         BooleanBuilder builder = new BooleanBuilder();
-        if(StringUtils.isNotBlank(user.getName())){
+        if (StringUtils.isNotBlank(user.getName())) {
             builder.and(QUser.user.name.contains(user.getName()));
         }
-        if(StringUtils.isNotBlank(user.getUsername())) {
+        if (StringUtils.isNotBlank(user.getUsername())) {
             builder.and(QUser.user.username.contains(user.getUsername()));
         }
-        if(StringUtils.isNotBlank(user.getPhone())){
+        if (StringUtils.isNotBlank(user.getPhone())) {
             builder.and(QUser.user.phone.contains(user.getPhone()));
         }
         Page<User> users = userRepository.findAll(builder, pageRequest);

@@ -19,13 +19,13 @@ public class User implements Serializable {
      * 用户名
      */
     @Column(name = "f_username", unique = true, nullable = false, length = 16)
-    private  String username;
+    private String username;
 
     /**
      * 登录密码
      */
     @Column(name = "f_password", length = 32, nullable = false)
-    private  String password;
+    private String password;
 
     /**
      * 姓名
@@ -92,5 +92,5 @@ public class User implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    
+
 }
